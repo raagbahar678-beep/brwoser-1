@@ -1,3 +1,5 @@
+import java.util.Locale
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -47,7 +49,7 @@ run {
                 val xy = tok.substring(1).split(",")
                 val x = xy[0].toDouble() * s + ox
                 val y = xy[1].toDouble() * s + topY
-                path.append(tok[0]).append(String.format(java.util.Locale.US, "%.2f,%.2f ", x, y))
+                path.append(tok[0]).append(String.format(Locale.US, "%.2f,%.2f ", x, y))
             }
         }
     }
@@ -74,7 +76,7 @@ run {
         Math.round((rgb[1] + m) * 255).toInt(),
         Math.round((rgb[2] + m) * 255).toInt()
     )
-    val strokeW = String.format(java.util.Locale.US, "%.2f", 0.45 * s)
+    val strokeW = String.format(Locale.US, "%.2f", 0.45 * s)
 
     val drawableDir = File(iconResDir, "drawable")
     val mipmapDir = File(iconResDir, "mipmap-anydpi-v26")
